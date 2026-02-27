@@ -53,7 +53,7 @@ export default function Footer() {
                 </div>
 
                 <div className="footer-bottom">
-                    <p>© 2026 ItalyTaxi. All rights reserved. Built for international travellers 🌍</p>
+                    <p>© 2026 ItalyTaxi v1.1. All rights reserved. Built for international travellers 🌍</p>
                     <div className="footer-flags">🇮🇹 🇬🇧 🇺🇸 🇩🇪 🇫🇷</div>
                     <div style={{ display: "flex", gap: 16 }}>
                         <Link href="#" style={{ fontSize: "0.85rem", color: "var(--text-muted)" }}>Privacy</Link>

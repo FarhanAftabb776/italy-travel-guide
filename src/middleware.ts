@@ -2,10 +2,10 @@ import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { NextResponse, type NextRequest } from 'next/server'
 
 // Next.js 16 Proxy Middleware
-export async function proxy(request: NextRequest) {
+export async function middleware(request: NextRequest) {
     // Safety Check: If environment variables are missing (e.g. during first Vercel build)
     if (!process.env.NEXT_PUBLIC_SUPABASE_URL || !process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY) {
-        console.warn("[Proxy] Missing Supabase environment variables. Skipping auth check.");
+        console.warn("[Middleware] Missing Supabase environment variables. Skipping auth check.");
         return NextResponse.next();
     }
 
@@ -87,7 +87,7 @@ export async function proxy(request: NextRequest) {
     return response
 }
 
-export default proxy;
+export default middleware;
 
 export const config = {
     matcher: ['/admin/:path*'],
